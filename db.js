@@ -1,13 +1,10 @@
 // db.js
-// Import mongoose
 const mongoose = require('mongoose');
-// Load environment variables
-require('dotenv').config();
+require('dotenv').config(); // Load environment variables
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Database connected successfully'))
-  .catch(err => console.error('Database connection error:', err));
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Connection error:', err));
 
-// Export mongoose for use in other files
 module.exports = mongoose;

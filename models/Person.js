@@ -1,11 +1,12 @@
 // models/Person.js
-const mongoose = require('../db');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 // Define Person Schema
-const personSchema = new mongoose.Schema({
-  name: { type: String, required: true },  // Name is required
+const personSchema = new Schema({
+  name: { type: String, required: true },
   age: Number,
-  favoriteFoods: [String,]  // Array of strings for favorite foods
+  favoriteFoods: [String] // Array of strings for favorite foods
 });
 
 // Create and export the Person model
